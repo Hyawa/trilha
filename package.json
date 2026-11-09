@@ -1,0 +1,58 @@
+{
+  "name": "trilha",
+  "productName": "Trilha",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Trilha — mapas de estudo em linha do tempo, offline e ilimitados.",
+  "author": "Hyawa",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Hyawa/trilha.git"
+  },
+  "type": "module",
+  "main": "dist-electron/main/index.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build && electron-builder",
+    "build:web": "vite build",
+    "postinstall": "electron-builder install-app-deps",
+    "start": "electron .",
+    "typecheck": "tsc --noEmit -p tsconfig.json && tsc --noEmit -p tsconfig.node.json",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:e2e": "npm run build:web && playwright test",
+    "rebuild": "electron-builder install-app-deps",
+    "icon": "node scripts/gen-icon.mjs"
+  },
+  "dependencies": {
+    "@dnd-kit/core": "^6.3.1",
+    "@dnd-kit/sortable": "^10.0.0",
+    "@dnd-kit/utilities": "^3.2.2",
+    "better-sqlite3": "^12.4.1",
+    "clsx": "^2.1.1",
+    "lucide-react": "^0.552.0",
+    "react": "^19.2.7",
+    "react-dom": "^19.2.7",
+    "sonner": "^2.0.8",
+    "tailwind-merge": "^3.7.0",
+    "zustand": "^5.1.0"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.65.0",
+    "@tailwindcss/vite": "^4.3.0",
+    "@types/better-sqlite3": "^7.6.13",
+    "@types/node": "^24.10.1",
+    "@types/react": "^19.2.16",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^6.0.2",
+    "electron": "^42.1.0",
+    "electron-builder": "^26.8.1",
+    "tailwindcss": "^4.3.0",
+    "typescript": "^6.0.3",
+    "vite": "^8.0.16",
+    "vite-plugin-electron": "^1.0.1",
+    "vite-plugin-electron-renderer": "^1.0.0",
+    "vitest": "^4.1.8"
+  }
+}
